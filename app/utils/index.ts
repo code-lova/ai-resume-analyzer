@@ -1,3 +1,6 @@
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
 /**
  * Converts a file size in bytes to a human-readable format.
  *
@@ -38,4 +41,8 @@ export const formatSize = (bytes: number): string => {
 
 export const generateUUID = () => {
     return crypto.randomUUID();
+}
+
+export const cn = (...inputs: ClassValue[]) => {
+    return twMerge(clsx(...inputs));
 }
